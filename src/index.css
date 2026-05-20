@@ -8,6 +8,6 @@
 
 @layer base {
   body {
-    @apply bg-zinc-950 text-zinc-200 antialiased selection:bg-indigo-500/30 selection:text-indigo-200;
+    @apply bg-[#ebe5db] text-[#8d182f] antialiased selection:bg-[#b69157]/30 selection:text-[#8d182f];
   }
 }

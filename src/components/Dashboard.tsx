@@ -34,19 +34,19 @@ export function Dashboard() {
   if (!isClient) return null; // Avoid hydration mismatch on icons/motion if applicable, though shouldn't matter too much here
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col font-sans p-6 sm:p-12">
+    <div className="min-h-screen bg-[#ebe5db] text-[#8d182f] flex flex-col font-sans p-6 sm:p-12">
       <div className="flex-1 w-full max-w-5xl mx-auto flex flex-col">
         {/* Header */}
         <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-16 gap-6">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-zinc-100 flex items-center justify-center rounded-sm">
-              <div className="w-4 h-4 bg-zinc-950 rotate-45"></div>
+            <div className="w-8 h-8 bg-[#8d182f] flex items-center justify-center rounded-sm shadow-sm">
+              <div className="w-4 h-4 bg-[#ebe5db] rotate-45"></div>
             </div>
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-zinc-400">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#b69157]">
               Faculty of Engineering / UP
             </span>
           </div>
-          <div className="flex flex-col sm:flex-row gap-2 sm:space-x-8 text-xs font-medium tracking-wide text-zinc-500">
+          <div className="flex flex-col sm:flex-row gap-2 sm:space-x-8 text-xs font-medium tracking-wide text-[#b69157]">
             <span>TERM: SPRING 2024</span>
             <span>PORTAL: ONLINE</span>
           </div>
@@ -57,23 +57,23 @@ export function Dashboard() {
           <section className="mb-16">
             <h1 className="text-5xl sm:text-7xl font-bold tracking-tighter leading-[0.9] mb-8">
               Central Link Hub.<br />
-              <span className="text-zinc-600">Ready for work.</span>
+              <span className="text-[#b69157]">Ready for work.</span>
             </h1>
 
-            <div className="relative w-full max-w-2xl group">
+            <div className="relative w-full max-w-2xl group shadow-sm rounded-xl">
               <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                <Search className="w-4 h-4 text-zinc-600 group-focus-within:text-zinc-400 transition-colors" />
+                <Search className="w-4 h-4 text-[#b69157] group-focus-within:text-[#8d182f] transition-colors" />
               </div>
               <input
                 id="search-input"
                 type="text"
                 placeholder="Search for a platform or resource..."
-                className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl py-4 pl-12 pr-4 text-sm text-zinc-300 focus:outline-none focus:border-zinc-700 transition-colors placeholder-zinc-600"
+                className="w-full bg-white/50 border border-[#b69157]/30 rounded-xl py-4 pl-12 pr-4 text-sm text-[#8d182f] focus:outline-none focus:border-[#b69157] transition-colors placeholder-[#8d182f]/50"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                <kbd className="hidden sm:inline-flex items-center gap-1 font-sans px-1.5 py-0.5 rounded border border-zinc-800 bg-zinc-900 text-[10px] font-medium text-zinc-500">
+                <kbd className="hidden sm:inline-flex items-center gap-1 font-sans px-1.5 py-0.5 rounded border border-[#b69157]/20 bg-white/60 text-[10px] font-medium text-[#b69157]">
                   <Command className="w-3 h-3" />K
                 </kbd>
               </div>
@@ -101,15 +101,15 @@ export function Dashboard() {
                         delay: index * 0.05,
                         ease: [0.16, 1, 0.3, 1], // ease out expo
                       }}
-                      className="group bg-zinc-900 border border-zinc-800 p-8 rounded-2xl flex flex-col justify-between hover:bg-zinc-800/50 transition-all min-h-[200px]"
+                      className="group bg-white/40 border border-[#b69157]/30 p-8 rounded-2xl flex flex-col justify-between hover:bg-white/80 hover:border-[#b69157]/60 hover:shadow-md transition-all min-h-[200px]"
                     >
                       <div>
                         <div className="flex justify-between items-start mb-6">
-                          <div className="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-400 transition-colors group-hover:text-zinc-200">
+                          <div className="w-10 h-10 bg-[#ebe5db] rounded-lg flex items-center justify-center text-[#b69157] transition-colors group-hover:text-[#8d182f]">
                             <Icon className="w-5 h-5" />
                           </div>
                           <svg
-                            className="w-5 h-5 text-zinc-600 group-hover:text-zinc-100 transition-colors"
+                            className="w-5 h-5 text-[#b69157] group-hover:text-[#8d182f] transition-colors"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -123,7 +123,7 @@ export function Dashboard() {
                           </svg>
                         </div>
                         <h3 className="text-xl font-semibold mb-2">{link.title}</h3>
-                        <p className="text-sm text-zinc-500">{link.description}</p>
+                        <p className="text-sm text-[#8d182f]/70">{link.description}</p>
                       </div>
                     </motion.a>
                   );
@@ -136,11 +136,11 @@ export function Dashboard() {
                   exit={{ opacity: 0 }}
                   className="col-span-full py-16 text-center"
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-800 mb-6">
-                    <Search className="w-6 h-6 text-zinc-600" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/50 border border-[#b69157]/30 mb-6">
+                    <Search className="w-6 h-6 text-[#b69157]" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">No resources found</h3>
-                  <p className="text-sm text-zinc-500">
+                  <p className="text-sm text-[#8d182f]/70">
                     Try adjusting your search query to find what you're looking for.
                   </p>
                 </motion.div>
@@ -149,11 +149,11 @@ export function Dashboard() {
           </section>
         </main>
 
-        <footer className="mt-auto flex flex-col sm:flex-row justify-between items-start sm:items-end border-t border-zinc-900 pt-8 gap-4 pb-8 sm:pb-0">
-          <div className="text-[10px] uppercase tracking-widest text-zinc-600">
-            System Status: <span className="text-emerald-500">All operational</span>
+        <footer className="mt-auto flex flex-col sm:flex-row justify-between items-start sm:items-end border-t border-[#b69157]/30 pt-8 gap-4 pb-8 sm:pb-0">
+          <div className="text-[10px] uppercase tracking-widest text-[#b69157]">
+            System Status: <span className="text-[#8d182f] font-medium">All operational</span>
           </div>
-          <div className="text-[10px] uppercase tracking-widest text-zinc-600 sm:text-right">
+          <div className="text-[10px] uppercase tracking-widest text-[#b69157] sm:text-right">
             Universidad Panamericana<br />
             Engineering Faculty Hub v2.1
           </div>
